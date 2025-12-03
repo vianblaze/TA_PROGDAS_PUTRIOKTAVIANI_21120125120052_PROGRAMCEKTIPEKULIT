@@ -2,13 +2,11 @@
 session_start();
 require 'QuizLogic.php'; 
 
-// Kalo request GET (bukan submit), reset kuis dan objek kuis
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     unset($_SESSION['quiz_logic']); // Hapus object kuis
     unset($_SESSION['history_stack']); // Hapus riwayat Stack
 }
 
-// Pas form disubmit bakal simpan nama terus masuk ke quiz
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nama = trim($_POST['nama'] ?? '');
     if ($nama === '') $nama = 'Pengguna';
@@ -28,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Page</title>
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 

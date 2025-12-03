@@ -63,9 +63,9 @@ class QuizLogic {
         $max = max($score_dry, $score_normal, $score_combo, $score_oily);
         
         // Modul 2 enih pengkondisian (If-Else If-Else) buat menentukan hasil
-        if ($max == $score_dry) return "Kulit Kering (Kering kerontang, butuh hidrasi ekstra!)";
-        elseif ($max == $score_normal) return "Kulit Normal (Selamat! Kulitmu udah stabil nih.)";
-        elseif ($max == $score_combo) return "Kulit Kombinasi (Yuk, fokus rawat T-zone & pipi barengan!)";
-        else return "Kulit Berminyak (Wih, *glowing* banget tapi jaga sebumnya ya!)";
+        if ($max == $score_dry) return "Kulit Kering (Kering kerontang, kulitmu butuh hidrasi ekstra! pilih skincare dengan kandungan Hyaluronic Acid, Ceramide, Glycerin, dan Niacinamide untuk menghidrasi dan memperkuat lapisan kulit. Selain itu, bahan seperti Squalane, Shea Butter, Petroleum Jelly, dan ekstrak Lidah Buaya membantu melembapkan dan melindungi kulit.)";
+        elseif ($max == $score_normal) return "Kulit Normal (Selamat! Kulitmu udah stabil nih. Kamu bisa pilih skincare dengan kandungan asam hialuronat dan ceramide untuk menjaga kelembapan, niacinamide dan vitamin C untuk mencerahkan serta melindungi kulit. Kandungan seperti retinol dan bakuchiol bisa digunakan untuk manfaat anti-penuaan dini, sementara AHA (seperti glycolic acid) baik untuk mengatasi sel kulit mati dan menghaluskan tekstur.)";
+        elseif ($max == $score_combo) return "Kulit Kombinasi (Yuk, fokus rawat T-zone & pipi barengan! Kamu bisa pilih skincare dengan kandungan hyaluronic acid, niacinamide, salicylic acid, dan glycerin. Kandungan-kandungan ini menyeimbangkan kebutuhan kulit yang berbeda, yaitu melembapkan area kering dan mengontrol minyak di area berminyak.)";
+        else return "Kulit Berminyak (Wih, glowing banget tapi jaga sebumnya ya! Kamu bisa pilih skincare dengan kandungan Niacinamide, Salicylic Acid (BHA), dan Clay untuk mengontrol minyak dan membersihkan pori-pori. Bahan lain seperti Hyaluronic Acid untuk melembapkan tanpa rasa berat, dan Retinol untuk meregenerasi kulit, juga bisa digunakan. Kandungan antioksidan seperti Vitamin C dan bahan menenangkan seperti Centella Asiatica (Cica) juga bermanfaat.";
     }
 }

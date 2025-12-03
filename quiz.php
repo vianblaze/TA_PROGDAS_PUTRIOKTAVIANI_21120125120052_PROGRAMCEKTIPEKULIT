@@ -23,11 +23,10 @@ $current = isset($_GET['q']) ? intval($_GET['q']) : 1;
 if (isset($_GET['action']) && $_GET['action'] === 'back') {
     // Ambil (POP) nomor pertanyaan sebelumnya dari Stack
     $previous_q = array_pop($_SESSION['history_stack']);
-    if ($previous_q && $previous_q < $current) {
+    
         $current = $previous_q;
         header("Location: quiz.php?q=" . $current);
         exit;
-    }
 }
 
 // Modul2 buat proses jawaban user
