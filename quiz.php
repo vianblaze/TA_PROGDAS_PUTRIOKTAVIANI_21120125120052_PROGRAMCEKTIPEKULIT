@@ -5,11 +5,11 @@ require 'QuizLogic.php';
 // Ambil Object QuizLogic dari sesi
 $logic = isset($_SESSION['quiz_logic']) ? unserialize($_SESSION['quiz_logic']) : null;
 if (!$logic instanceof QuizLogic) {
-    header('Location: index.php'); // Redirect kalo object hilang
+    header('Location: index.php'); // Redirect kalo object ilang
     exit;
 }
 
-// Modul 7: Inisialisasi Stack History buat fitur 'Kembali'
+// Modul 7 buat inisialisasi stack history buat fitur kembali
 if (!isset($_SESSION['history_stack'])) {
     $_SESSION['history_stack'] = [];
 }
@@ -19,7 +19,7 @@ $total_questions = $logic->getTotalQuestions();
 // buat nentuin nomor pertanyaan sekarang
 $current = isset($_GET['q']) ? intval($_GET['q']) : 1;
 
-// Modul 7: Logika Navigasi Kembali menggunakan Stack POP
+// Modul 7 buat button kembali pake Stack POP
 if (isset($_GET['action']) && $_GET['action'] === 'back') {
     // Ambil (POP) nomor pertanyaan sebelumnya dari Stack
     $previous_q = array_pop($_SESSION['history_stack']);
@@ -30,18 +30,18 @@ if (isset($_GET['action']) && $_GET['action'] === 'back') {
     }
 }
 
-// Proses jawaban user (Modul 2)
+// Modul2 buat proses jawaban user
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $selected = $_POST['answer'] ?? '';
     $number = isset($_POST['number']) ? intval($_POST['number']) : $current;
 
     if ($selected) {
-        // Modul 4 & 6: Menyimpan jawaban pake Method Setter
+        // Modul 4 & 6 buat menyimpan jawaban pake Method Setter
         $logic->setAnswer($number, $selected);
         $_SESSION['quiz_logic'] = serialize($logic);
 
         if ($number < $total_questions) {
-            // Modul 7: Simpan (PUSH) nomor pertanyaan saat ini ke Stack sebelum maju
+            // Modul 7 buat menyimpan (PUSH) nomor pertanyaan saat ini ke Stack sebelum maju
             if ($current == $number) { 
                  array_push($_SESSION['history_stack'], $number);
             }
@@ -77,7 +77,7 @@ $saved_answer = $logic->getSavedAnswer($current);
             <tr>
                 <th><?php echo $question["text"]; ?></th>
             </tr>
-            <?php foreach ($question["options"] as $opt): // Modul 3: Perulangan untuk opsi jawaban ?>
+            <?php foreach ($question["options"] as $opt): // Modul 3 buat perulangan untuk opsi jawaban ?>
                 <tr>
                     <td>
                         <label class="opsi-item">

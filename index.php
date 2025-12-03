@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nama = trim($_POST['nama'] ?? '');
     if ($nama === '') $nama = 'Pengguna';
     
-    // Modul 5: Membuat Object dari Class QuizLogic
+    // Modul 5 buat object dari class QuizLogic
     $logic = new QuizLogic($nama); 
     $_SESSION['quiz_logic'] = serialize($logic); // Menyimpan object ke Session
     

@@ -10,11 +10,11 @@ if (!$logic instanceof QuizLogic) {
     exit;
 }
 
-// Modul 4 & 6: Pake Method Getter dan Method Perhitungan
+// Modul 4 & 6 enih pake Method Getter dan Method Perhitungan
 $nama = $logic->getUsername();
 $result = $logic->calculateResult();
 
-// Hapus quiz dan riwayat setelah selesai
+// Hapus quiz dan riwayat setelah selesai wallahi i'm finished :)
 unset($_SESSION['quiz_logic']);
 unset($_SESSION['history_stack']);
 ?>

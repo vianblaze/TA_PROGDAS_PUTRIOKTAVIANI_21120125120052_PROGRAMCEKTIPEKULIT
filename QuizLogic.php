@@ -1,16 +1,16 @@
 <?php
-// Modul 5: Class Definisi
+// Modul 5 class definisi
 class QuizLogic {
-    // Modul 6: Encapsulation (pake private buat melindungi data)
+    // Modul 6 buat encapsulation (pake private buat melindungi data)
     private $questions = []; 
     private $answers = [];
     private $username = "Pengguna";
 
-    // Modul 5: Constructor
+    // Modul 5 constructor
     public function __construct(string $username) {
         $this->username = htmlspecialchars($username);
         
-        // Modul 1: Array (Menyimpan data pertanyaan)
+        // Modul 1 pake tipe data array (Menyimpan data pertanyaan)
         $this->questions = [
             1 => ["text" => "Bagaimana kondisi kulitmu saat disentuh?", "options" => ["Kering & kasar", "Normal", "Lembut tapi berminyak", "Sangat berminyak"]],
             2 => ["text" => "Bagaimana kulitmu setelah bangun tidur?", "options" => ["Sangat kering", "Seimbang", "Berminyak di T-zone", "Berminyak seluruh wajah"]],
@@ -25,12 +25,12 @@ class QuizLogic {
         ];
     }
 
-    // Modul 4 & 6: Setter Method buat simpan jawaban
+    // Modul 4 & 6 pake Setter Method buat simpan jawaban yh
     public function setAnswer(int $number, string $answer) {
         $this->answers[$number] = $answer;
     }
     
-    // Modul 6: Getter Method
+    // Modul 6 Getter Method ea
     public function getUsername(): string {
         return $this->username;
     }
@@ -47,13 +47,13 @@ class QuizLogic {
         return $this->answers[$number] ?? "";
     }
 
-    // Modul 4: Method buat hitung hasil
+    // Modul 4 enih method buat hitung hasil
     public function calculateResult(): string {
         $score_dry = 0; $score_normal = 0; $score_combo = 0; $score_oily = 0;
         
-        // Modul 3: Perulangan (Looping) buat hitung skor
+        // Modul 3 pake perulangan (looping) buat hitung skor
         foreach ($this->answers as $ans) {
-            // Modul 2: Pengkondisian (Conditional)
+            // Modul 2 pake pengkondisian (conditional)
             if (str_contains($ans, "kering")) $score_dry++;
             if ($ans == "Normal" || $ans == "Seimbang") $score_normal++;
             if (str_contains($ans, "T-zone")) $score_combo++;
@@ -62,7 +62,7 @@ class QuizLogic {
         
         $max = max($score_dry, $score_normal, $score_combo, $score_oily);
         
-        // Modul 2: Pengkondisian (If-Else If-Else) buat menentukan hasil
+        // Modul 2 enih pengkondisian (If-Else If-Else) buat menentukan hasil
         if ($max == $score_dry) return "Kulit Kering (Kering kerontang, butuh hidrasi ekstra!)";
         elseif ($max == $score_normal) return "Kulit Normal (Selamat! Kulitmu udah stabil nih.)";
         elseif ($max == $score_combo) return "Kulit Kombinasi (Yuk, fokus rawat T-zone & pipi barengan!)";
