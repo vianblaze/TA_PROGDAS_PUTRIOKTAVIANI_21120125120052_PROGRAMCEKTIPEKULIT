@@ -3,17 +3,16 @@ session_start();
 require 'QuizLogic.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    unset($_SESSION['quiz_logic']); // Hapus object kuis
-    unset($_SESSION['history_stack']); // Hapus riwayat Stack
+    unset($_SESSION['quiz_logic']);
+    unset($_SESSION['history_stack']);
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nama = trim($_POST['nama'] ?? '');
     if ($nama === '') $nama = 'Pengguna';
     $_SESSION['username'] = $nama;
-    // Modul 5 buat object dari class QuizLogic
     $logic = new QuizLogic($nama); 
-    $_SESSION['quiz_logic'] = serialize($logic); // Menyimpan object ke Session
+    $_SESSION['quiz_logic'] = serialize($logic);
     
     header('Location: quiz.php');
     exit;

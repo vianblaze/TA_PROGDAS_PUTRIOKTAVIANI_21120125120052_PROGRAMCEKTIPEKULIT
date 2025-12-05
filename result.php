@@ -3,28 +3,23 @@ session_start();
 require 'QuizLogic.php';
 $username = $_SESSION['username'];
 
-// Ambil objek QuizLogic
 $logic = isset($_SESSION['quiz_logic']) ? unserialize($_SESSION['quiz_logic']) : null;
 if (!$logic instanceof QuizLogic) {
     echo "<h2>Data quiz tidak ditemukan.</h2>";
     exit;
 }
 
-// Ambil nama + hasil
 $nama = $logic->getUsername();
 $result = $logic->calculateResult();
 
-// Tentukan tipe kulit
 if (strpos($result, "Kering") !== false) $type = "kering";
 elseif (strpos($result, "Normal") !== false) $type = "normal";
 elseif (strpos($result, "Kombinasi") !== false) $type = "kombinasi";
 else $type = "berminyak";
 
-// Hapus session quiz
 unset($_SESSION['quiz_logic']);
 unset($_SESSION['history_stack']);
 
-// Produk Indonesia
 $products = [
     "kering" => [
         ["img"=>"prod/skintific-ceramide.jpg","name"=>"Skintific 5X Ceramide","desc"=>"Ceramide • Hyaluronic Acid • Soothing","url"=>"https://shopee.co.id/SKINTIFIC-5X-Ceramide-Barrier-Series-Set-Cleanser-Low-PH-Toner-Barrier-Serum-Moisture-Gel-Sunscreen-SPF50-PA-Soothing-Serum-Sunscreen-Repair-Skin-Barrier-Hydrate-Brighten-Calm-Down-Sensitive-Skin-Skincare-Collection-Bundle-i.380266264.42102088960?extraParams=%7B%22display_model_id%22%3A285171461732%2C%22model_selection_logic%22%3A3%7D&sp_atk=55b0a8de-fecb-4131-b242-511b1a6b8848&xptdk=55b0a8de-fecb-4131-b242-511b1a6b8848"],
@@ -65,7 +60,6 @@ $slides = $products[$type] ?? [];
 
     <h3 style="margin-top:20px; text-align:center;">Rekomendasi Skincare</h3>
 
-    <!-- SLIDER PRODUK -->
     <div class="product-slider">
 
         <button class="slider-btn left" id="prevBtn">❮</button>

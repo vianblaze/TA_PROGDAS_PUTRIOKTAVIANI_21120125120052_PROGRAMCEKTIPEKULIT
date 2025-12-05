@@ -24,7 +24,7 @@ $products = [
     <title>Rekomendasi Skincare</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ==== STYLE TAMBAHAN KHUSUS HALAMAN REKOMENDASI ==== */
+        
         .rekom-container {
             width: 90%;
             max-width: 520px;

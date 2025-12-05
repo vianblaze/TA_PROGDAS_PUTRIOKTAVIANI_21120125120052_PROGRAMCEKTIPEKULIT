@@ -1,4 +1,3 @@
-// slider.js — circular slider
 (function () {
     const track = document.getElementById("sliderTrack");
     if (!track) return;

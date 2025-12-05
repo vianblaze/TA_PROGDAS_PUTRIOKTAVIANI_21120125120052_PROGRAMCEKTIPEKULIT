@@ -73,10 +73,6 @@ body {
     text-decoration: none;
 }
 
-/* ========================================================= */
-/* INDEX LOGIN PAGE */
-/* ========================================================= */
-
 body.halaman-awal {
     display: flex;
     justify-content: center;
@@ -183,21 +179,15 @@ body.halaman-awal #chk:checked ~ .masuk-card label {
     transform: scale(.6);
 }
 
-/* ========================================================= */
-/*           REKOMENDASI PAGE (TAMPILAN MIRIP FIGMA)        */
-/* ========================================================= */
-
 .rekom-body {
     background: #ffe9f0 !important;
     padding-bottom: 80px;
 }
 
-/* Container utama */
 .rekom-container {
     padding: 20px;
 }
 
-/* Top bar */
 .rekom-topbar {
     display: flex;
     justify-content: space-between;
@@ -215,7 +205,6 @@ body.halaman-awal #chk:checked ~ .masuk-card label {
     border-radius: 50%;
 }
 
-/* Welcome text */
 .rekom-welcome {
     margin: 15px 0 0;
     color: #444;
@@ -227,7 +216,6 @@ body.halaman-awal #chk:checked ~ .masuk-card label {
     margin-top: 5px;
 }
 
-/* Search */
 .rekom-search {
     display: flex;
     background: white;
@@ -255,7 +243,6 @@ body.halaman-awal #chk:checked ~ .masuk-card label {
     cursor: pointer;
 }
 
-/* Category tabs */
 .rekom-kategori {
     display: flex;
     margin-top: 20px;
@@ -273,13 +260,11 @@ body.halaman-awal #chk:checked ~ .masuk-card label {
     color: #ff7c9e;
 }
 
-/* TITLE */
 .rekom-title {
     margin-top: 25px;
     font-size: 18px;
 }
 
-/* Grid produk */
 .rekom-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -309,7 +294,6 @@ body.halaman-awal #chk:checked ~ .masuk-card label {
     cursor: pointer;
 }
 
-/* Bottom Navigation */
 .rekom-bottomnav {
     position: fixed;
     bottom: 0;
@@ -323,10 +307,6 @@ body.halaman-awal #chk:checked ~ .masuk-card label {
     font-size: 22px;
     z-index: 100;
 }
-
-/* ========================================================= */
-/*                 HOME PAGE (UI mirip desain)               */
-/* ========================================================= */
 
 body.home-page {
     font-family: 'Jost', sans-serif;

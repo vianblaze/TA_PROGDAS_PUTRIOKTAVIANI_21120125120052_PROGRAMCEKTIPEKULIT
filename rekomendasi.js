@@ -5,7 +5,6 @@ const searchInput = document.getElementById("searchInput");
 buttons.forEach(btn => {
     btn.addEventListener("click", () => {
 
-        // aktifkan tombol yg diklik
         buttons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
 
