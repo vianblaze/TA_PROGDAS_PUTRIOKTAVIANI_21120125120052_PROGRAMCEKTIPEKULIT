@@ -1,0 +1,118 @@
+.hasil-card {
+    width: 90%;
+    max-width: 520px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 5px 20px 50px #00000050;
+    overflow: hidden;
+    display: block;
+}
+
+.hasil-card .product-slider {
+    width: 100%;
+    max-width: 360px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.hasil-card .slider-track-wrapper {
+    width: 100%;
+    max-width: 260px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.hasil-card .slider-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.45s ease;
+}
+
+.hasil-card .slide-item {
+    min-width: 100%;
+    padding: 12px 8px;
+    text-align: center;
+}
+
+.hasil-card .slide-item img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border: 2px solid #eee;
+}
+
+.hasil-card .slide-item h4 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #573b8a;
+}
+
+.hasil-card .slide-item p {
+    font-size: 13px;
+    color: #555;
+}
+
+.hasil-card .slider-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 22px;
+    border: none;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
+.hasil-card .slider-btn:hover { transform: scale(1.05); }
+
+.hasil-card .slider-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.hasil-card .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+.hasil-card .dot.active {
+    background: #573b8a;
+    box-shadow: 0 0 0 3px rgba(87,59,138,0.15);
+}
+
+.restart-btn {
+    display: inline-block;
+    margin-top: 15px;
+    justify-content: center;
+    padding: 8px 15px;
+    background: #573b8a;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-more {
+    display: block;
+    padding: 14px;
+    text-align: center;
+    margin: 25px auto;
+    width: 80%;
+    background: #ff7da9;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+}

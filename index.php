@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nama = trim($_POST['nama'] ?? '');
     if ($nama === '') $nama = 'Pengguna';
-    
+    $_SESSION['username'] = $nama;
     // Modul 5 buat object dari class QuizLogic
     $logic = new QuizLogic($nama); 
     $_SESSION['quiz_logic'] = serialize($logic); // Menyimpan object ke Session
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="chk" aria-hidden="true">Jelajahi</label><br><br>
                 <p align="center">
                     Welcome to Glowskin!<br>
-                    Masukin namamu dulu ingyh sebelum cek jenis kulitmu!
+                    Masukin namamu dulu ya sebelum cek jenis kulitmu!
                 </p>
                 <br>
                 <input type="text" name="nama" placeholder="Nama" required>

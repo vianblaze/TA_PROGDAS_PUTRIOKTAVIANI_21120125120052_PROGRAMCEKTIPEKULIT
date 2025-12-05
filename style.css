@@ -5,8 +5,8 @@ body {
     background: #f4f4f4;
 }
 
-/* ----- HALAMAN QUIZ & RESULT ----- */
-.quiz-card, .hasil-card {
+/* Card umum (quiz & result) */
+.quiz-card {
     width: 90%;
     max-width: 520px;
     margin: 50px auto;
@@ -14,9 +14,14 @@ body {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 5px 20px 50px #00000050;
+    overflow: hidden;
+    display: block;
 }
 
-/* TABEL QUIZ */
+.hasil-card {
+    overflow: hidden;
+}
+
 .question-table {
     width: 100%;
     border-collapse: collapse;
@@ -58,8 +63,7 @@ body {
     z-index: 10;
 }
 
-.back-btn, 
-.restart-btn {
+.back-btn {
     display: inline-block;
     margin-top: 15px;
     padding: 8px 15px;
@@ -69,22 +73,26 @@ body {
     text-decoration: none;
 }
 
-/* ----- INDEX / LOGIN ----- */
+/* ========================================================= */
+/* INDEX LOGIN PAGE */
+/* ========================================================= */
+
 body.halaman-awal {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* background: url("bglogin.jpg") no-repeat center / cover; */
 }
 
-.masuk-card, .nama-card {
+/* CARD HALAMAN AWAL */
+body.halaman-awal .masuk-card,
+body.halaman-awal .nama-card {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.main-box {
+body.halaman-awal .main-box {
     width: 90%;
     max-width: 500px;
     height: 500px;
@@ -95,9 +103,11 @@ body.halaman-awal {
 }
 
 /* Checkbox trick */
-#chk { display: none; }
+body.halaman-awal #chk { 
+    display: none; 
+}
 
-.masuk-card label {
+body.halaman-awal .masuk-card label {
     color: #6d44b8;
     font-size: 2.3em;
     display: flex;
@@ -109,7 +119,7 @@ body.halaman-awal {
     text-shadow: 5px 20px 50px #000000;
 }
 
-.halaman-awal input {
+body.halaman-awal input {
     width: 60%;
     background: #e0dede;
     padding: 10px;
@@ -120,7 +130,7 @@ body.halaman-awal {
     outline: none;
 }
 
-.halaman-awal button {
+body.halaman-awal button {
     width: 60%;
     height: 40px;
     margin: 20px auto;
@@ -133,26 +143,25 @@ body.halaman-awal {
     cursor: pointer;
 }
 
-button:hover {
+body.halaman-awal button:hover {
     background: #000000;
 }
 
-.nama-card {
+body.halaman-awal .nama-card {
     background: #eee;
     border-radius: 60% / 10%;
     transform: translateY(-120px);
     transition: .9s ease-in-out;
 }
 
-.nama-card form {
+body.halaman-awal .nama-card form {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontal */
-    justify-content: center;
+    align-items: center;
 }
 
-.nama-card label {
+body.halaman-awal .nama-card label {
     width: 100%;
     font-size: 2.3em;
     margin: 5px;
@@ -162,14 +171,291 @@ button:hover {
     cursor: pointer;
 }
 
-#chk:checked ~ .nama-card {
+body.halaman-awal #chk:checked ~ .nama-card {
     transform: translateY(-500px);
 }
 
-#chk:checked ~ .nama-card label {
+body.halaman-awal #chk:checked ~ .nama-card label {
     transform: scale(1);
 }
 
-#chk:checked ~ .masuk-card label {
+body.halaman-awal #chk:checked ~ .masuk-card label {
     transform: scale(.6);
+}
+
+/* ========================================================= */
+/*           REKOMENDASI PAGE (TAMPILAN MIRIP FIGMA)        */
+/* ========================================================= */
+
+.rekom-body {
+    background: #ffe9f0 !important;
+    padding-bottom: 80px;
+}
+
+/* Container utama */
+.rekom-container {
+    padding: 20px;
+}
+
+/* Top bar */
+.rekom-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rekom-menu {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.rekom-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Welcome text */
+.rekom-welcome {
+    margin: 15px 0 0;
+    color: #444;
+}
+
+.rekom-brand {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Search */
+.rekom-search {
+    display: flex;
+    background: white;
+    padding: 10px;
+    border-radius: 40px;
+    margin-top: 15px;
+}
+
+.rekom-search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.rekom-search-btn {
+    background: #ff7ca8;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Category tabs */
+.rekom-kategori {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+    font-size: 15px;
+}
+
+.rekom-kategori span {
+    cursor: pointer;
+    color: #888;
+}
+
+.rekom-kategori .aktif {
+    font-weight: bold;
+    color: #ff7c9e;
+}
+
+/* TITLE */
+.rekom-title {
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+/* Grid produk */
+.rekom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.rekom-card {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+}
+
+.rekom-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+}
+
+.rekom-love {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Bottom Navigation */
+.rekom-bottomnav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    font-size: 22px;
+    z-index: 100;
+}
+
+/* ========================================================= */
+/*                 HOME PAGE (UI mirip desain)               */
+/* ========================================================= */
+
+body.home-page {
+    font-family: 'Jost', sans-serif;
+    background: #fef6f8;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+/* HEADER */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-btn {
+    font-size: 28px;
+    color: #dd6d82;
+    cursor: pointer;
+}
+
+.profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+/* WELCOME */
+.welcome-box {
+    margin-top: 20px;
+}
+
+.welcome-text {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.nama-user {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* SEARCH */
+.search-container {
+    display: flex;
+    margin-top: 15px;
+    background: white;
+    padding: 10px;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 3px 15px #00000010;
+}
+
+.search-container input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.search-btn {
+    background: #ff8fa3;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* CATEGORY */
+.kategori-menu {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.kategori-menu button {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+.kategori-menu button.active,
+.kategori-menu button:hover {
+    color: #dd6d82;
+    font-weight: bold;
+}
+
+/* PRODUCTS GRID */
+.title-section {
+    margin-top: 25px;
+}
+
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.produk-item {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 20px #00000015;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.produk-item:hover {
+    transform: scale(1.03);
+}
+
+.produk-item img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.nama-produk {
+    margin: 8px 0 3px;
+    font-weight: 600;
+}
+
+.harga {
+    color: #666;
+    font-size: 14px;
 }
